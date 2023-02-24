@@ -4,7 +4,7 @@ Nruneq=$(expr 10000)	# initiation timestep
 Nrun1=$(expr 250000)	# dt*Nrun = 0.25 ns of data per run
 Nrun2=$(expr 1000000)	# dt*Nrun = 1ns of data per run
 Nrun3=$(expr 2500000)	# dt*Nrun = 2.5ns of data per run
-Nrun3=$(expr 5000000)	# dt*Nrun = 2.5ns of data per run
+Nrun4=$(expr 5000000)	# dt*Nrun = 2.5ns of data per run
 Temp=$(expr 298.15)		# Temperature in K
 Press=$(expr 1)			# Pressure in atm
 
