@@ -1,0 +1,19 @@
+# created by fftool
+tolerance 2.5
+filetype xyz
+output simbox.xyz
+
+structure water_pack.xyz
+  number 500
+  inside box 1.5000 1.5000 1.5000 24.3482 24.3482 24.3482
+end structure
+
+structure K_pack.xyz
+  number 36
+  inside box 1.5000 1.5000 1.5000 24.3482 24.3482 24.3482
+end structure
+
+structure Cl_pack.xyz
+  number 36
+  inside box 1.5000 1.5000 1.5000 24.3482 24.3482 24.3482
+end structure
