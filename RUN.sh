@@ -18,12 +18,12 @@ do
 	mkdir $folder
 	cd $folder
 
-	for dt in 1 #2
+	for dt in 1 2
 	do
 		mkdir dt_$dt
 		cd dt_$dt
 
-		for i in 1 #2 3 4
+		for i in 1 2 3 4
 		do
 			mkdir $i
 			cd $i

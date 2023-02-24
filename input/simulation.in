@@ -204,80 +204,80 @@ dump trjectory all xyz ${Nd} movie.xyz
 dump_modify trjectory element Ow H K Cl
 
 run ${Nrun1}
-shell bash copy_files.sh ${tstep} 00.25Mstep
+shell bash copy_files.sh dt_${tstep} 00.25Mstep
 
 run ${Nrun1}
-shell bash copy_files.sh ${tstep} 00.50Mstep
+shell bash copy_files.sh dt_${tstep} 00.50Mstep
 
 run ${Nrun1}
-shell bash copy_files.sh ${tstep} 00.75Mstep
+shell bash copy_files.sh dt_${tstep} 00.75Mstep
 
 run ${Nrun1}
-shell bash copy_files.sh ${tstep} 01.00Mstep
+shell bash copy_files.sh dt_${tstep} 01.00Mstep
 
 run ${Nrun1}
-shell bash copy_files.sh ${tstep} 01.25Mstep
+shell bash copy_files.sh dt_${tstep} 01.25Mstep
 
 run ${Nrun1}
-shell bash copy_files.sh ${tstep} 01.50Mstep
+shell bash copy_files.sh dt_${tstep} 01.50Mstep
 
 run ${Nrun1}
-shell bash copy_files.sh ${tstep} 01.75Mstep
+shell bash copy_files.sh dt_${tstep} 01.75Mstep
 
 run ${Nrun1}
-shell bash copy_files.sh ${tstep} 02.00step
+shell bash copy_files.sh dt_${tstep} 02.00step
 
 run ${Nrun2}
-shell bash copy_files.sh ${tstep} 03.00Mstep
+shell bash copy_files.sh dt_${tstep} 03.00Mstep
 
 run ${Nrun2}
-shell bash copy_files.sh ${tstep} 04.00Mstep
+shell bash copy_files.sh dt_${tstep} 04.00Mstep
 
 run ${Nrun2}
-shell bash copy_files.sh ${tstep} 05.00Mstep
+shell bash copy_files.sh dt_${tstep} 05.00Mstep
 
 run ${Nrun2}
-shell bash copy_files.sh ${tstep} 06.00Mstep
+shell bash copy_files.sh dt_${tstep} 06.00Mstep
 
 run ${Nrun2}
-shell bash copy_files.sh ${tstep} 07.00Mstep
+shell bash copy_files.sh dt_${tstep} 07.00Mstep
 
 run ${Nrun2}
-shell bash copy_files.sh ${tstep} 08.00Mstep
+shell bash copy_files.sh dt_${tstep} 08.00Mstep
 
 run ${Nrun2}
-shell bash copy_files.sh ${tstep} 09.00Mstep
+shell bash copy_files.sh dt_${tstep} 09.00Mstep
 
 run ${Nrun2}
-shell bash copy_files.sh ${tstep} 10.00Mstep
+shell bash copy_files.sh dt_${tstep} 10.00Mstep
 
 run ${Nrun3}
-shell bash copy_files.sh ${tstep} 12.50Mstep
+shell bash copy_files.sh dt_${tstep} 12.50Mstep
 
 run ${Nrun3}
-shell bash copy_files.sh ${tstep} 15.00Mstep
+shell bash copy_files.sh dt_${tstep} 15.00Mstep
 
 run ${Nrun3}
-shell bash copy_files.sh ${tstep} 17.50Mstep
+shell bash copy_files.sh dt_${tstep} 17.50Mstep
 
 run ${Nrun3}
-shell bash copy_files.sh ${tstep} 20.00Mstep
+shell bash copy_files.sh dt_${tstep} 20.00Mstep
 
 run ${Nrun4}
-shell bash copy_files.sh ${tstep} 25.00Mstep
+shell bash copy_files.sh dt_${tstep} 25.00Mstep
 
 run ${Nrun4}
-shell bash copy_files.sh ${tstep} 30.00Mstep
+shell bash copy_files.sh dt_${tstep} 30.00Mstep
 
 run ${Nrun4}
-shell bash copy_files.sh ${tstep} 35.00Mstep
+shell bash copy_files.sh dt_${tstep} 35.00Mstep
 
 run ${Nrun4}
-shell bash copy_files.sh ${tstep} 40.00Mstep
+shell bash copy_files.sh dt_${tstep} 40.00Mstep
 
 run ${Nrun4}
-shell bash copy_files.sh ${tstep} 45.00Mstep
+shell bash copy_files.sh dt_${tstep} 45.00Mstep
 
 run ${Nrun4}
-shell bash copy_files.sh ${tstep} 50.00Mstep
+shell bash copy_files.sh dt_${tstep} 50.00Mstep
 quit
