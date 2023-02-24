@@ -60,14 +60,6 @@ neigh_modify every 1 delay 0 check yes
 # velocity-Verlet integrator
 run_style verlet
 
-
-# minimizing the system using the conjugate gradient method
-min_style cg
-min_modify dmax 0.05
-minimize 1.0e-6 1.0e-6 1000 10000
-reset_timestep 0
-
-
 # initializing velocities
 velocity all create ${Temp} ${RandomSeed}  
 
