@@ -63,7 +63,7 @@ do
 			cp ../../../../input/water.xyz .
 
 			# compute total number of Li and SO4
-			N_salt=$(($m*$N_salt*$n))
+			N_salt=$(($m*$N_salt))
 
 			# Create initial configuration using fftool and packmol
 			~/software/lammps/la*22/fftool/fftool $N_wat water.xyz $N_Salt K.xyz N_salt Cl.xyz -r 55 > /dev/null
