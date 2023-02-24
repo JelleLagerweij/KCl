@@ -76,7 +76,7 @@ do
 			#sed -i '12,31d' ./data.lmp
 			cp data.lmp ../data.lmp
 			cd ..
-			rm -r config
+			#rm -r config
 
 			# Commiting run and reporting that
 			#sbatch runMD
