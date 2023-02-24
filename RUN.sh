@@ -1,5 +1,5 @@
 #!/bin/bash
-runfile=$(expr runMD_D)	# Server where to run
+runfile=$(expr runMD_H)	# Server where to run
 Nruneq=$(expr 10000)	# initiation timestep
 Nrun1=$(expr 250000)	# dt*Nrun = 0.25 ns of data per run
 Nrun2=$(expr 1000000)	# dt*Nrun = 1ns of data per run
