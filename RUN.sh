@@ -71,15 +71,13 @@ do
 			~/software/lammps/la*22/fftool/fftool $N_wat water.xyz $N_salt K.xyz $N_salt Cl.xyz -r 55 -l > /dev/null
 
 			# removing the force data from packmol as I use my own forcefield.data. copy data.lmp remove rest
-			#rm -f in.lmp
-			#rm -f *.xyz pa*
-			#sed -i '12,31d' ./data.lmp
+			sed -i '12,27d' ./data.lmp
 			cp data.lmp ../data.lmp
 			cd ..
-			#rm -r config
+			rm -r config
 
 			# Commiting run and reporting that
-			#sbatch runMD
+			sbatch runMD
 			echo "Runtask commited: T="$Temp", m="$m", run " $i"."
 			cd ..
 		done
