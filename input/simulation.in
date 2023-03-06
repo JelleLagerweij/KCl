@@ -217,7 +217,7 @@ run ${Nrun1}
 shell bash copy_files.sh dt_${tstep} 01.75Mstep
 
 run ${Nrun1}
-shell bash copy_files.sh dt_${tstep} 02.00step
+shell bash copy_files.sh dt_${tstep} 02.00Mstep
 
 run ${Nrun2}
 shell bash copy_files.sh dt_${tstep} 03.00Mstep
