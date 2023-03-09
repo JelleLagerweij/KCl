@@ -9,7 +9,7 @@ Temp=$(expr 298.15)		# Temperature in K
 Press=$(expr 5)			# Pressure in atm
 
 N_wat=$(expr 1000)		# Number of water molecules
-N_salt=$(expr 9)		# Number of KCl's per 1m solution
+N_salt=$(expr 18)		# Number of KCl's per 1m solution (1000 waters)
 
 
 for folder in running
