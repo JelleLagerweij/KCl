@@ -71,7 +71,7 @@ def cond_Ons(octp, charges):
     sig_pm = Ons_pm*(co.e**2*charges[0]*charges[1]*N)/(co.k*T*V)
     sig_mm = Ons_mm*(co.e**2*charges[1]**2*N)/(co.k*T*V)
 
-    cond_Ons = sig_pp + 2*sig_pm + sig_mm
+    cond_Ons = sig_pp + 1*sig_pm + sig_mm
     words = 'E conduct Ons/[S/m]'
     octp.results[words] = [cond_Ons.n, cond_Ons.s, len(octp.f_runs)]
 
@@ -88,7 +88,7 @@ def cond_Ons(octp, charges):
 loc = '../stored/'
 
 t = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 3, 5, 6, 7, 8, 9, 10, 12.5, 15,
-     17.5, 20, 25, 30]
+     17.5, 20, 25, 30, 35, 40, 45, 50]
 
 time = [0]*len(t)
 for dt in range(1, 3):
@@ -125,7 +125,7 @@ for dt in range(1, 3):
         mixture.onsager_coeff(box_size_check=True)
 
         # Getting conductivity out of this
-        cond_NE(mixture, [0.75, -0.75])
-        cond_Ons(mixture, [0.75, -0.75])
+        cond_NE(mixture, [1, -1])
+        cond_Ons(mixture, [1, -1])
 
         mixture.store(location='../stored/', name=time[i] + '.csv')

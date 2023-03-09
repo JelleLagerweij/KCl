@@ -16,16 +16,13 @@ variable tstep equal dt_VALUE # timestep in fs
 
 #################### NPT ####################
 variable Ninptpre equal Nrun_eq_VALUE # Pre-initialize the NPT ensemble (very small timesteps)
-variable Ninpt equal Nrun4_VALUE  # Initialize the NPT ensemble
-variable Npnpt equal Nrun4_VALUE  # Production in the NPT ensemble (volume)
+variable Ninpt equal Nrun1_VALUE  # Initialize the NPT ensemble
+variable Npnpt equal Nrun1_VALUE  # Production in the NPT ensemble (volume)
 
 #################### NVT ####################
 variable Ninvtpre equal Nrun_eq_VALUE  # Pre-initialize the NVT ensemble (very small timesteps)
-variable Ninvt equal Nrun3_VALUE   # Initialize the NVT ensemble 2.5Mstep
-variable Nrun1 equal Nrun1_VALUE  # production in the NVT ensemble (Transport properties)
-variable Nrun2 equal Nrun2_VALUE  # production in the NVT ensemble (Transport properties)
-variable Nrun3 equal Nrun3_VALUE  # production in the NVT ensemble (Transport properties)
-variable Nrun4 equal Nrun4_VALUE  # production in the NVT ensemble (Transport properties)
+variable Ninvt equal Nrun2_VALUE  # Initialize the NVT ensemble 2.5Mstep
+variable Nrun4 equal Nrun3_VALUE  # production in the NVT ensemble (Transport properties)
 
 variable Nf equal 100000      # Nfreq (fix ave/time and thermo)
 variable Ne equal  1          # Nevery (fix ave/time)
@@ -37,8 +34,8 @@ variable nb equal 10          # Number of blocks (fix ordern)
 variable nbe equal 20         # Number of block elements (fix ordern)
 variable Nvisc equal 5        # Nevery for viscosity (fix ordern: sample data at (Nvisc*2))
 variable Ncond equal 5        # Nevery for Tconductivity (fix ordern: sample data at (Ncond*2))
-variable Ndiff equal 1000     # Nevery for diffusivity (fix ordern: sample data at (Ndiff))
-variable Nwrit equal 100000   # Nwrite for transport properties (fix ordern: write every (Nwrit))
+variable Ndiff equal 500     # Nevery for diffusivity (fix ordern: sample data at (Ndiff))
+variable Nwrit equal 50000   # Nwrite for transport properties (fix ordern: write every (Nwrit))
 
 variable Nrdfe equal 1000     # Nevery for RDF (fix ave/time)
 variable Nrdfw equal 1000     # Nwrite for RDF (compute rdf/ext: write every (Nrdfw*Nrdfe))
@@ -92,8 +89,6 @@ unfix integrate
 fix integrate all npt temp ${Temp} ${Temp} 100.0 iso ${Pres} ${Pres} 1000.0
 
 timestep ${tstep}
-
-
 run ${Ninpt}
 reset_timestep 0
 
@@ -195,81 +190,5 @@ fix f4 all ave/time 1 1 ${Nrdfe} c_rdfs
 dump trjectory all xyz ${Nd} movie.xyz
 dump_modify trjectory element Ow H K Cl
 
-run ${Nrun1}
-shell bash copy_files.sh dt_${tstep} 00.25Mstep
-
-run ${Nrun1}
-shell bash copy_files.sh dt_${tstep} 00.50Mstep
-
-run ${Nrun1}
-shell bash copy_files.sh dt_${tstep} 00.75Mstep
-
-run ${Nrun1}
-shell bash copy_files.sh dt_${tstep} 01.00Mstep
-
-run ${Nrun1}
-shell bash copy_files.sh dt_${tstep} 01.25Mstep
-
-run ${Nrun1}
-shell bash copy_files.sh dt_${tstep} 01.50Mstep
-
-run ${Nrun1}
-shell bash copy_files.sh dt_${tstep} 01.75Mstep
-
-run ${Nrun1}
-shell bash copy_files.sh dt_${tstep} 02.00Mstep
-
-run ${Nrun2}
-shell bash copy_files.sh dt_${tstep} 03.00Mstep
-
-run ${Nrun2}
-shell bash copy_files.sh dt_${tstep} 04.00Mstep
-
-run ${Nrun2}
-shell bash copy_files.sh dt_${tstep} 05.00Mstep
-
-run ${Nrun2}
-shell bash copy_files.sh dt_${tstep} 06.00Mstep
-
-run ${Nrun2}
-shell bash copy_files.sh dt_${tstep} 07.00Mstep
-
-run ${Nrun2}
-shell bash copy_files.sh dt_${tstep} 08.00Mstep
-
-run ${Nrun2}
-shell bash copy_files.sh dt_${tstep} 09.00Mstep
-
-run ${Nrun2}
-shell bash copy_files.sh dt_${tstep} 10.00Mstep
-
 run ${Nrun3}
-shell bash copy_files.sh dt_${tstep} 12.50Mstep
-
-run ${Nrun3}
-shell bash copy_files.sh dt_${tstep} 15.00Mstep
-
-run ${Nrun3}
-shell bash copy_files.sh dt_${tstep} 17.50Mstep
-
-run ${Nrun3}
-shell bash copy_files.sh dt_${tstep} 20.00Mstep
-
-run ${Nrun4}
-shell bash copy_files.sh dt_${tstep} 25.00Mstep
-
-run ${Nrun4}
-shell bash copy_files.sh dt_${tstep} 30.00Mstep
-
-run ${Nrun4}
-shell bash copy_files.sh dt_${tstep} 35.00Mstep
-
-run ${Nrun4}
-shell bash copy_files.sh dt_${tstep} 40.00Mstep
-
-run ${Nrun4}
-shell bash copy_files.sh dt_${tstep} 45.00Mstep
-
-run ${Nrun4}
-shell bash copy_files.sh dt_${tstep} 50.00Mstep
 quit

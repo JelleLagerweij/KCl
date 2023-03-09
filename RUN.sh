@@ -1,16 +1,15 @@
 #!/bin/bash
 runfile=$(expr runMD_H)	# Server where to run
-Nruneq=$(expr 10000)	# initiation timestep
-Nrun1=$(expr 250000)	# dt*Nrun = 0.25 ns of data per run
-Nrun2=$(expr 1000000)	# dt*Nrun = 1ns of data per run
-Nrun3=$(expr 2500000)	# dt*Nrun = 2.5ns of data per run
-Nrun4=$(expr 5000000)	# dt*Nrun = 2.5ns of data per run
+dt=$(expr 2)            # Timestep in fs
+Nruneq=$(expr 100)	# initiation timestep -2
+Nrun1=$(expr 5000)	# dt*Nrun = 0.25 ns of data per run -3
+Nrun2=$(expr 2000)	# dt*Nrun = 1ns of data per run -3
+Nrun3=$(expr 5000)	# dt*Nrun = 2.5ns of data per run -4
 Temp=$(expr 298.15)		# Temperature in K
-Press=$(expr 1)			# Pressure in atm
+Press=$(expr 5)			# Pressure in atm
 
-N_wat=$(expr 500)		# Number of water molecules
+N_wat=$(expr 1000)		# Number of water molecules
 N_salt=$(expr 9)		# Number of KCl's per 1m solution
-m=$(expr 4)				# Concentration file to use
 
 
 for folder in running
@@ -18,12 +17,12 @@ do
 	mkdir $folder
 	cd $folder
 
-	for dt in 1 2
+	for m in 4 #3 2 1
 	do
-		mkdir dt_$dt
-		cd dt_$dt
+		mkdir m_$m
+		cd m_$m
 
-		for i in 1 2 3 4
+		for i in 1 #2 3 4
 		do
 			mkdir $i
 			cd $i
