@@ -22,7 +22,7 @@ variable Npnpt equal Nrun1_VALUE  # Production in the NPT ensemble (volume)
 #################### NVT ####################
 variable Ninvtpre equal Nrun_eq_VALUE  # Pre-initialize the NVT ensemble (very small timesteps)
 variable Ninvt equal Nrun2_VALUE  # Initialize the NVT ensemble 2.5Mstep
-variable Nrun4 equal Nrun3_VALUE  # production in the NVT ensemble (Transport properties)
+variable Nrun3 equal Nrun3_VALUE  # production in the NVT ensemble (Transport properties)
 
 variable Nf equal 100000      # Nfreq (fix ave/time and thermo)
 variable Ne equal  1          # Nevery (fix ave/time)
