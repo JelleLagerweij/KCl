@@ -1,5 +1,5 @@
 #!/bin/bash
-runfile=$(expr runMD_D)	# Server where to run
+runfile=$(expr runMD_S)	# Server where to run
 dt=$(expr 2)            # Timestep in fs
 Nruneq=$(expr 10000)	# initiation timestep 
 Nrun1=$(expr 5000000)	# dt*Nrun = 10ns of data per run
@@ -8,21 +8,21 @@ Nrun3=$(expr 50000000)	# dt*Nrun = 100ns of data per run
 Temp=$(expr 298.15)		# Temperature in K
 Press=$(expr 5)			# Pressure in atm
 
-N_wat=$(expr 1000)		# Number of water molecules
-N_salt=$(expr 18)		# Number of KCl's per 1m solution (1000 waters)
+N_wat=$(expr 1500)		# Number of water molecules
+N_salt=$(expr 27)		# Number of KCl's per 1m solution (1000 waters)
 
 
-for folder in running
+for folder in runningS
 do
 	mkdir $folder
 	cd $folder
 
-	for m in 4 3 2 1
+	for m in 4 #3 2 1
 	do
 		mkdir m_$m
 		cd m_$m
 
-		for i in 1 2 3 4 5
+		for i in 1 #2 3 4 5
 		do
 			mkdir $i
 			cd $i
