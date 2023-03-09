@@ -1,10 +1,10 @@
 #!/bin/bash
 runfile=$(expr runMD_D)	# Server where to run
 dt=$(expr 2)            # Timestep in fs
-Nruneq=$(expr 100)	# initiation timestep 
-Nrun1=$(expr 5000)	# dt*Nrun = 10ns of data per run
-Nrun2=$(expr 2000)	# dt*Nrun = 4ns of data per run
-Nrun3=$(expr 5000)	# dt*Nrun = 100ns of data per run
+Nruneq=$(expr 10000)	# initiation timestep 
+Nrun1=$(expr 5000000)	# dt*Nrun = 10ns of data per run
+Nrun2=$(expr 2000000)	# dt*Nrun = 4ns of data per run
+Nrun3=$(expr 50000000)	# dt*Nrun = 100ns of data per run
 Temp=$(expr 298.15)		# Temperature in K
 Press=$(expr 5)			# Pressure in atm
 
