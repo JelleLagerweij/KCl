@@ -4,12 +4,12 @@ dt=$(expr 2)            # Timestep in fs
 Nruneq=$(expr 10000)	# initiation timestep 
 Nrun1=$(expr 5000000)	# dt*Nrun = 10ns of data per run
 Nrun2=$(expr 2000000)	# dt*Nrun = 4ns of data per run
-Nrun3=$(expr 50000000)	# dt*Nrun = 100ns of data per run
+Nrun3=$(expr 100000000)	# dt*Nrun = 100ns of data per run
 Temp=$(expr 298.15)		# Temperature in K
-Press=$(expr 5)			# Pressure in atm
+Press=$(expr 1)			# Pressure in atm
 
-N_wat=$(expr 1500)		# Number of water molecules
-N_salt=$(expr 27)		# Number of KCl's per 1m solution (1000 waters)
+N_wat=$(expr 555)		# Number of water molecules
+N_salt=$(expr 10)		# Number of KCl's per 1m solution (550 waters)
 
 
 for folder in runningS
@@ -17,12 +17,12 @@ do
 	mkdir $folder
 	cd $folder
 
-	for m in 4 #3 2 1
+	for m in 2 3 4
 	do
 		mkdir m_$m
 		cd m_$m
 
-		for i in 1 #2 3 4 5
+		for i in 1 2 3
 		do
 			mkdir $i
 			cd $i
