@@ -1,5 +1,7 @@
 #!/bin/bash
 runfile=$(expr runMD_S)	# Server where to run
+module load Python/3.10.4-GCCcore-11.3.0  # Otherwise Snellius can't use packmol/fftool
+
 dt=$(expr 2)            # Timestep in fs
 Nruneq=$(expr 5000)	# initiation timestep 
 Nrun1=$(expr 5000000)	# dt*Nrun = 10ns of data per run
