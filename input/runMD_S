@@ -9,11 +9,7 @@
 module load 2022
 module load OpenMPI/4.1.4-GCC-11.3.0
 
-<<<<<<< HEAD
-lmp=~/lammps/la*18/src/
-=======
 lmp=~/simulation/lammps/la*18/src/
->>>>>>> 682a190e5dabee226afe3ba5a44dbde67280f07a
 srun $lmp/lmp_mpi < simulation.in
 
 wait
