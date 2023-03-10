@@ -49,7 +49,7 @@ do
 			sed -i 's/run_FOLDER/'$i'/' copy_files.sh
 
 			# Set runMD variables
-			sed -i 's/JOB_NAME/KCl T is '${Temp%.*}' m is '$m' run '$i'/' runMD
+			sed -i 's/JOB_NAME/KCl_T_s-'${Temp%.*}'_m_is_'$m'_run_'$i'/' runMD
 			sed -i 's/INPUT/simulation.in/' runMD
 
 			# Creating config folder

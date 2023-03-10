@@ -1,5 +1,6 @@
 #!/bin/bash
-#SBATCH --job_name="JOB_NAME"
+#SBATCH -J JOB_NAME
+#SBATCH -p thin
 #SBATCH -n 128
 #SBATCH --mem=128G
 #SBATCH --exclusive
@@ -8,7 +9,7 @@
 module load 2022
 module load OpenMPI/4.1.4-GCC-11.3.0
 
-lmp=~/la*18/src/
+lmp=~/lammps/la*18/src/
 srun $lmp/lmp_mpi < simulation.in
 
 wait
