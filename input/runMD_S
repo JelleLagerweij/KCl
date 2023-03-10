@@ -3,12 +3,12 @@
 #SBATCH -n 128
 #SBATCH --mem=128G
 #SBATCH --exclusive
-#SBATCH -t 1-00:00:00
+#SBATCH -t 4-00:00:00
 
 module load 2022
 module load OpenMPI/4.1.4-GCC-11.3.0
 
-lmp=~/la*18/src/
+lmp=~/simulation/lammps/la*18/src/
 srun $lmp/lmp_mpi < simulation.in
 
 wait
