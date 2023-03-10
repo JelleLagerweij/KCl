@@ -1,10 +1,10 @@
 #!/bin/bash
 runfile=$(expr runMD_S)	# Server where to run
 dt=$(expr 2)            # Timestep in fs
-Nruneq=$(expr 10000)	# initiation timestep 
+Nruneq=$(expr 5000)	# initiation timestep 
 Nrun1=$(expr 5000000)	# dt*Nrun = 10ns of data per run
 Nrun2=$(expr 2000000)	# dt*Nrun = 4ns of data per run
-Nrun3=$(expr 100000000)	# dt*Nrun = 100ns of data per run
+Nrun3=$(expr 100000000)	# dt*Nrun = 200ns of data per run
 Temp=$(expr 298.15)		# Temperature in K
 Press=$(expr 1)			# Pressure in atm
 
@@ -17,7 +17,7 @@ do
 	mkdir $folder
 	cd $folder
 
-	for m in 2 3 4
+	for m in 2 4
 	do
 		mkdir m_$m
 		cd m_$m
