@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH -J JOB_NAME
-#SBATCH -p thin
 #SBATCH -n 128
 #SBATCH --mem=128G
 #SBATCH --exclusive
