@@ -91,14 +91,14 @@ for i in range(len(folder)):
 
     f_runs = ['1', '2', '3']  # All internal runs
     groups = ['wat', 'K', 'Cl']
-    
+
     # Load the class
     mixture = octp.PP_OCTP(folder[i], f_runs, groups, dt=2, plotting=False)
-    
+
     # Change the file names
     mixture.filenames(Diff_Onsag='onsagercoefficient.dat',
                       T_conduc='thermconductivity.dat')
-    
+
     mixture.changefit(Minc=12, Mmax=45)
     mixture.pressure(mov_ave=150)
     mixture.tot_energy(mov_ave=150)
@@ -108,14 +108,52 @@ for i in range(len(folder)):
     mixture.molality('Cl', 'wat', 18.01528)
     mixture.viscosity()
     mixture.thermal_conductivity()
+    mixture.self_diffusivity(YH_correction=False, box_size_check=True)
     mixture.self_diffusivity(YH_correction=True, box_size_check=True)
     mixture.onsager_coeff(box_size_check=True)
-    
+
     # Getting conductivity out of this
+    cond_NE(mixture, [1, -1], YH_correction=False)
     cond_NE(mixture, [1, -1], YH_correction=True)
     cond_Ons(mixture, [1, -1])
-    
+
     mixture.store()
-    
+
+    print(mixture.results['E conduct Ons/[S/m]'])
+    print(mixture.results['E conduct NEYH_cor /[S/m]'])
+
+folder = ['../Parsa/36', '../Parsa/54']
+
+for i in range(len(folder)):
+
+    f_runs = ['1', '2', '3']  # All internal runs
+    groups = ['wat', 'K', 'Cl']
+
+    # Load the class
+    mixture = octp.PP_OCTP(folder[i], f_runs, groups, dt=2, plotting=False)
+
+    # Change the file names
+    mixture.filenames(Diff_Onsag='diffonsag.dat',
+                      Diff_self='diffself.dat')
+
+    mixture.changefit(Minc=12, Mmax=45)
+    mixture.pressure(mov_ave=150)
+    mixture.tot_energy(mov_ave=150)
+    mixture.pot_energy(mov_ave=150)
+    mixture.density()
+    mixture.molarity('Cl')
+    mixture.molality('Cl', 'wat', 18.01528)
+    mixture.viscosity()
+    mixture.self_diffusivity(YH_correction=False, box_size_check=True)
+    mixture.self_diffusivity(YH_correction=True, box_size_check=True)
+    mixture.onsager_coeff(box_size_check=True)
+
+    # Getting conductivity out of this
+    cond_NE(mixture, [1, -1], YH_correction=False)
+    cond_NE(mixture, [1, -1], YH_correction=True)
+    cond_Ons(mixture, [1, -1])
+
+    mixture.store()
+
     print(mixture.results['E conduct Ons/[S/m]'])
     print(mixture.results['E conduct NEYH_cor /[S/m]'])
