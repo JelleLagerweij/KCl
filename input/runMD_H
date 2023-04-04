@@ -8,9 +8,9 @@
 
 
 # Set to run in Scratch and move to location
-mkdir -p /scratch-shared/$USER/JOB_NAME
+mkdir -p /scratch/$USER/JOB_NAME
 cp $SLURM_SUBMIT_DIR/* /scratch/$USER/JOB_NAME/
-cd /scratch-shared/$USER/JOB_NAME
+cd /scratch/$USER/JOB_NAME
 
 
 lmp=~/software/lammps/lam*18/src/ # getting the correct run file location
