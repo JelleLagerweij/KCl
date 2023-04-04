@@ -1,7 +1,7 @@
 #!/bin/bash
-runfile=$(expr runMD_L)	# Server where to run
-module load 2022
-module load Python/3.10.4-GCCcore-11.3.0  # Otherwise Snellius can't use packmol/fftool
+runfile=$(expr runMD_H)	# Server where to run
+#module load 2022
+#module load Python/3.10.4-GCCcore-11.3.0  # Otherwise Snellius can't use packmol/fftool
 
 dt=$(expr 2)            # Timestep in fs
 Nruneq=$(expr 5000)	# initiation timestep 

@@ -21,4 +21,4 @@ lmp=~/software/lammps/lammps2018/src/
 srun $lmp/lmp_mpi < simulation.in
 
 # Copy output back from scratch to the directory from where the job was submitted
-cp -r output $SLURM_SUBMIT_DIR
+cp -r * $SLURM_SUBMIT_DIR/

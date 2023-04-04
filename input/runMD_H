@@ -4,9 +4,19 @@
 #SBATCH -n 12
 #SBATCH --mem-per-cpu=2G
 #SBATCH -t 6-00:00:00
+#SBATCH --mail-type=ALL
+
+
+# Set to run in Scratch and move to location
+mkdir -p /scratch-shared/$USER/JOB_NAME
+cp $SLURM_SUBMIT_DIR/* /scratch/$USER/JOB_NAME/
+cd /scratch-shared/$USER/JOB_NAME
+
 
 lmp=~/software/lammps/lam*18/src/ # getting the correct run file location
 mpirun $lmp/lmp_mpi < simulation.in # computing with n cpu cores.
 wait
 
 exit 0
+
+cp -r * $SLURM_SUBMIT_DIR/
