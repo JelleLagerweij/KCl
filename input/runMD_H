@@ -5,6 +5,7 @@
 #SBATCH --mem-per-cpu=2G
 #SBATCH -t 6-00:00:00
 #SBATCH --mail-type=ALL
+#SBATCH --mail-user=v.j.lagerweij@student.tudelft.nl
 
 
 # Set to run in Scratch and move to location
