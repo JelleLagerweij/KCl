@@ -33,7 +33,6 @@ do
 			# Coppying all needed files to run folder (alphabetical order)
 			cp ../../../input/$runfile runMD
 			cp ../../../input/simulation.in .
-			cp ../../../input/copy_files.sh .
 			cp ../../../input/forcefield.data .
 
 
