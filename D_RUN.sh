@@ -13,7 +13,6 @@ Press=$(expr 1)			# Pressure in atm
 
 N_wat=$(expr 1000)		# Number of water molecules
 N_salt=$(expr 18)		# Number of KCl's per 1m solution (550 waters)
-#this tehej
 
 for folder in runningS2
 do
