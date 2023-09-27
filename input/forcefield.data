@@ -37,7 +37,7 @@ angle_coeff 1 200 104.52           # H-Ow-H
 #dihedral_style none 
 #improper_style none
 
-set type 1 charge -1.1128          # O
-set type 2 charge +0.5564          # OH
+set type 1 charge -1.1128          # Ow
+set type 2 charge +0.5564          # H
 set type 3 charge +0.7500          # K
 set type 4 charge -0.7500          # Cl

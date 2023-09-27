@@ -1,5 +1,5 @@
 ####################################################
-# Preprocessing Li2SO4 in water
+# Preprocessing KCl in water
 #################### SETTING UP ####################
 units real
 dimension 3
